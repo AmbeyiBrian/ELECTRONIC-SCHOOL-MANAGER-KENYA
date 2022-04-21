@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae92075d-6407-4742-8776-4594e07be17f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/public/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/principalComponents/principalHomepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/principalComponents/principalHomepage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/register.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents/test.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elimu_frontend/src/http_common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/elimu_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/elimu_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/elimu_frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/elimu_frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/elimu_frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elimu_frontend/src/logo.svg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/elimu_frontend" />
+  </component>
+  <component name="ProjectId" id="1yovE9vY8qB7TJe4cqFyAbJnbl1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/elimu_frontend/src/components/registrationLoginComponents" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\public" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\src\components\registrationLoginComponents" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\src\components\registrationLoginComponents" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\node_modules" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\public" />
+      <recent name="C:\Users\Brian Ambeyi\PycharmProjects\Django Works\elimu\elimu_frontend\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae92075d-6407-4742-8776-4594e07be17f" name="Default Changelist" comment="" />
+      <created>1632930640829</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632930640829</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1633598629061">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1633598629061" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1633718606004">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1633718606004" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1633519787576">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1633519787576" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1633701645881">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1633701645880" />
+  </component>
+</project>

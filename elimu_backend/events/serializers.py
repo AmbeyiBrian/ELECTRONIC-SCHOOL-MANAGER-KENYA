@@ -15,5 +15,5 @@ class postSerializer(serializers.ModelSerializer):
     class Meta:
         model = events
         fields = (
-            ['school', 'date_of_event', 'event_description', 'title', 'target_audience']
+            ['school', 'date_of_event', 'event_description', 'title', 'target_audience', 'creator']
         )

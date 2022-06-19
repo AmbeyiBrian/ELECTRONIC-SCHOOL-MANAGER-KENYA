@@ -27,3 +27,9 @@ class postElectiveSerializer(serializers.ModelSerializer):
         fields = (
             ['school', 'elective', 'subject_name']
         )
+
+
+# class PostSubjectStudentSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model=SubjectStudent
+#         fields=(['student', 'subject'])

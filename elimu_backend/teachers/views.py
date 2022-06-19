@@ -42,7 +42,5 @@ class teacher_activation_code_validation(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        
-        print(serializer.errors)
         return Response(serializer.errors)
 

@@ -6,7 +6,7 @@ class postTimeTableSerializer(serializers.ModelSerializer):
     class Meta:
         model = timetable
         fields = (
-            ['school', 'form', 'stream', 'teacher', 'lesson_number', 'subject', 'day']
+            ['school', 'form', 'stream', 'lesson_number', 'subject', 'day']
         )
 
 

@@ -47,7 +47,6 @@ class Marks(models.Model):
 
     Agri_pp1 = models.IntegerField(default=0, null=True)
     Agri_pp2 = models.IntegerField(default=0, null=True)
-    Agri_pp3 = models.IntegerField(default=0, null=True)
 
     HSC_pp1 = models.IntegerField(default=0, null=True)
     HSC_pp2 = models.IntegerField(default=0, null=True)

@@ -28,7 +28,7 @@ class principal_serializer2(serializers.ModelSerializer):  # serializer to retri
         model = Users
         fields = (
             'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'national_id', 'user_class',
-            'password', 'auth_token', 'principal', 'teacher'
+            'password', 'auth_token', 'principal', 'teacher', 'sub_staff'
         )
         depth = 1
 
@@ -39,4 +39,12 @@ class teacher_serializer(serializers.ModelSerializer):  # serializer to create a
         fields = (
             'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'national_id', 'user_class',
             'password', 'auth_token',
+        )
+
+
+class update_user_info_serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Users
+        fields = (
+            'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'national_id', 'user_class'
         )

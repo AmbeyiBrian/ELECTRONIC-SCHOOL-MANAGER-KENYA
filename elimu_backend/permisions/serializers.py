@@ -12,4 +12,4 @@ class PutPermissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Permissions
         fields = (['update_timetable', 'add_edit_stream', 'add_edit_student', 'create_event', 'add_edit_teacher',
-                   'edit_school_info', 'add_delete_gallery'])
+                   'edit_school_info', 'add_delete_gallery', 'create_message', 'read_suggestion_box'])

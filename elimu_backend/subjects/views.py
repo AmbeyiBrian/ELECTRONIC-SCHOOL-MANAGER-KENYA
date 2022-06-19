@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from subjects.serializers import getSubjectsSerializer, postSubjectsSerializer, getElectiveSerializer, postElectiveSerializer
+from subjects.serializers import getSubjectsSerializer, postSubjectsSerializer, getElectiveSerializer, \
+    postElectiveSerializer
 from subjects.models import optional_subjects, electives
 
 
@@ -62,3 +63,17 @@ class DeleteElectiveAPI(APIView):
         elective.delete()
         serializer = getElectiveSerializer(elective)
         return Response(serializer.data)
+
+
+# class SubjectStudentAPI(APIView):
+#     permission_classes = ()
+#     serializer_class = PostSubjectStudentSerializer
+#
+#     def post(self, request):
+#         serializer = PostSubjectStudentSerializer(data=request.data)
+#
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data)
+#
+#         return Response(serializer.errors)

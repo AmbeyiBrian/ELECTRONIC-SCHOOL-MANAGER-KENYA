@@ -14,10 +14,8 @@ class PostAPI(APIView):
 
         if serializer.is_valid():
             serializer.save()
-            print(serializer.data)
             return Response(serializer.data)
         else:
-            print(serializer.errors)
             return Response(serializer.errors)
 
     def get(self, school, request):

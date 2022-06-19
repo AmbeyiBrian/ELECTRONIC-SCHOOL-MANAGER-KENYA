@@ -15,6 +15,7 @@ class studentsAPI(APIView):
             serializer.save()
             return Response(serializer.data)
         else:
+            print(serializer.errors)
             return Response(serializer.errors)
 
     def get(self, request, school):
@@ -45,7 +46,6 @@ class getStudent(APIView):
         serializer = postStudentSerializer(student, data=request.data)
 
         if serializer.is_valid():
-            print(serializer)
             serializer.save()
             return Response(serializer.data)
 

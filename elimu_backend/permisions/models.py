@@ -8,7 +8,7 @@ class Permissions(models.Model):
                                                         ('Deputy principal administration',
                                                          'Deputy principal administration'),
                                                         ('DoS', 'DoS'), ('Senior teacher', 'Senior teacher'),
-                                                        ('Class teacher', 'Class teacher')])
+                                                        ('Class teacher', 'Class teacher'), ('Secretary', 'Secretary')])
     update_timetable = models.BooleanField(default=False)
     add_edit_stream = models.BooleanField(default=False)
     add_edit_student = models.BooleanField(default=False)
@@ -16,6 +16,8 @@ class Permissions(models.Model):
     add_edit_teacher = models.BooleanField(default=False)
     edit_school_info = models.BooleanField(default=False)
     add_delete_gallery = models.BooleanField(default=False)
+    create_message = models.BooleanField(default=False)
+    read_suggestion_box = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = 'Permissions'

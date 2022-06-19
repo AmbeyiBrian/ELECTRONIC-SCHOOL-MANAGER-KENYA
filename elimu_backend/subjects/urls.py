@@ -8,5 +8,7 @@ urlpatterns = [
 
     path('electivesAPI/', views.electivesAPI.as_view(), name='electivesAPI'),
     path('electivesAPI/<int:school>', views.electivesAPI.as_view(), name='electivesAPI'),
-    path('DeleteElectiveAPI/<int:id>', views.DeleteElectiveAPI.as_view(), name='DeleteElectiveAPI')
+    path('DeleteElectiveAPI/<int:id>', views.DeleteElectiveAPI.as_view(), name='DeleteElectiveAPI'),
+
+    # path('SubjectStudentAPI/', views.SubjectStudentAPI.as_view(), name='SubjectStudentAPI'),
 ]

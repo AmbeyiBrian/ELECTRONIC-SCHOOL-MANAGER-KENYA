@@ -27,11 +27,11 @@ class Users(AbstractBaseUser):
     first_name = models.CharField(max_length=50, verbose_name='FirstName')
     last_name = models.CharField(max_length=50, verbose_name='LastName')
     email_address = models.EmailField(max_length=50, unique=True, primary_key=True)
-    phone_number = models.CharField(max_length=10)
+    phone_number = models.CharField(max_length=15)
     national_id = models.CharField(max_length=8)
     gender = models.CharField(max_length=20, choices=[('Male', 'Male'), ('Female', 'Female')])
-    user_class = models.CharField(max_length=50,
-                                  choices=[('Principal', 'Principal'), ('Teacher', 'Teacher'), ('Parent', 'Parent')])
+    user_class = models.CharField(max_length=50, choices=[('Principal', 'Principal'), ('Teacher', 'Teacher'),
+                                                          ('Parent', 'Parent'), ('Sub staff', 'Sub staff')])
     profile_photo = models.FileField(upload_to='profile_photos', null=True)
     date_joined = models.DateTimeField(verbose_name='Date joined', auto_now=True)
     last_login = models.DateTimeField(verbose_name='Last login', auto_now=True)

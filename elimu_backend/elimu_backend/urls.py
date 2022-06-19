@@ -18,6 +18,11 @@ urlpatterns = [
     re_path('suggestions/', include('suggestions.urls')),
     re_path('marks/', include('marks.urls')),
     re_path('subjects/', include('subjects.urls')),
+    re_path('attendance/', include('attendance.urls')),
+    re_path('fee/', include('fee.urls')),
+    re_path('parents/', include('parents.urls')),
+    re_path('messageApp/', include('messageApp.urls')),
+    re_path('subStaff/', include('subStaff.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

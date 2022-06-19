@@ -15,3 +15,15 @@ class streams(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.form, self.stream_name)
+
+
+class stream_subject_teacher(models.Model):
+    school = models.ForeignKey(school, models.CASCADE)
+    stream = models.ForeignKey(streams, models.CASCADE)
+    teacher = models.ForeignKey(teachers, models.CASCADE)
+    subject = models.CharField(max_length=30)
+
+    class Meta:
+        verbose_name_plural = 'stream subject teachers'
+
+        unique_together = [['school', 'stream', 'teacher', 'subject'], ['school', 'stream','subject']]

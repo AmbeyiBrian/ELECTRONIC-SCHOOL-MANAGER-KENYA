@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'suggestions',
     'marks',
     'subjects',
+    'attendance',
+    'fee',
+    'messageApp',
+    'subStaff'
 ]
 
 MIDDLEWARE = [

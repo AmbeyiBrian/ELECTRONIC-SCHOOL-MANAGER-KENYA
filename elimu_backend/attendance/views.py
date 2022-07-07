@@ -9,8 +9,8 @@ class attendanceAPI(APIView):
     permission_classes = ()
     serializer_class = postSerializer
 
-    def get(self, request, school):
-        attendance = attendanceSheet.objects.filter(student__school=school)
+    def get(self, request, school, year, term):
+        attendance = attendanceSheet.objects.filter(student__school=school, year=year, term=term)
         data = getSerializer(attendance, many=True).data
         return Response(data)
 

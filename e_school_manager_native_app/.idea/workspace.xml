@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1f598735-5024-4403-a418-afd6f85b71c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/e_school_manager_native_app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../elimu_backend/marks/migrations/0017_auto_20220619_1529.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../elimu_backend/marks/migrations/0018_auto_20220619_1531.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../elimu_backend/media/school_logos/pata_bursary_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../elimu_backend/timetable/migrations/0015_remove_timetable_form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../elimu_backend/marks/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../elimu_backend/marks/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../elimu_backend/timetable/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../elimu_backend/timetable/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../elimu_backend/timetable/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../elimu_backend/timetable/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../elimu_frontend" beforeDir="false" afterPath="$PROJECT_DIR$/../elimu_frontend" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2BIQhS4zERVrtZt4OqiOOdwwJau" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f598735-5024-4403-a418-afd6f85b71c6" name="Default Changelist" comment="" />
+      <created>1656591237838</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656591237838</updated>
+    </task>
+    <servers />
+  </component>
+</project>

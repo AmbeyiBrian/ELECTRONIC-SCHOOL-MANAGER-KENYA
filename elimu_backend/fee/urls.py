@@ -8,6 +8,8 @@ urlpatterns = [
     path('DeleteAPI/<int:id>', views.DeleteAPI.as_view(), name='DeleteAPI'),
     path('FeeStatementAPI/', views.FeeStatementAPI.as_view(), name='FeeStatementAPI'),
     path('FeeStatementAPI/<int:school>', views.FeeStatementAPI.as_view(), name='FeeStatementAPI'),
-    # path('access/token', views.getAccessToken, name='get_mpesa_access_token'),
-    # path('online/lipa', views.lipa_na_mpesa_online, name='lipa_na_mpesa'),
+    path('MpesaAPI/', views.MpesaAPI.as_view(), name='MpesaAPI'),
+
+    path('index', views.index, name='index'),
+    path('daraja/stk_push_callback', views.stk_push_callback, name='stk_push_callback')
 ]

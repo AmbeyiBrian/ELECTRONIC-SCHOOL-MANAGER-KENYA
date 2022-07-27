@@ -3,6 +3,9 @@ from rest_framework.views import APIView
 from students.serializers import postStudentSerializer, getStudentSerializer
 from students.models import students
 
+from fee.models import FeeStructure, FeeStatement
+from terms.models import Terms
+
 
 class studentsAPI(APIView):
     permission_classes = ()
@@ -10,12 +13,20 @@ class studentsAPI(APIView):
 
     def post(self, request):
         serializer = postStudentSerializer(data=request.data)
-
         if serializer.is_valid():
             serializer.save()
+
+            new_student = students.objects.get(school=request.data['school'], admission_number=request.data['admission_number'])
+            current_term=Terms.objects.filter(school=request.data['school']).order_by('id')
+            current_term=current_term[0].term_name
+
+            fee_total = 0
+            for i in FeeStructure.objects.filter(form=new_student.stream.form, school=request.data['school'], term=current_term):
+                fee_total += i.amount
+
+            FeeStatement.objects.create(student=new_student, ref_code='INITIAL', description='Initial term fee', amount=0, balance=fee_total).save()
             return Response(serializer.data)
         else:
-            print(serializer.errors)
             return Response(serializer.errors)
 
     def get(self, request, school):

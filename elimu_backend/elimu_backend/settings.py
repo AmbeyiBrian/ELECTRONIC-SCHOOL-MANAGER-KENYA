@@ -13,7 +13,7 @@ SECRET_KEY = 'if9t4o-(hewm^&i$4ec@47a35e6d#wa4cgmz67%n=yi5vh%d6*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '2974-41-89-104-15.eu.ngrok.io']
 
 # Application definition
 
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'attendance',
     'fee',
     'messageApp',
-    'subStaff'
+    'subStaff',
+    'django_daraja',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,19 @@ CORS_ORIGIN_WHITELIST = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+MPESA_ENVIRONMENT = 'sandbox'
+
+MPESA_CONSUMER_KEY = 'j0zsnSphOoc8sZ89cjNjt3YQmEhxT0cU'
+MPESA_CONSUMER_SECRET = 'FzDN12J8r958DWUE'
+
+MPESA_SHORTCODE = '174379'
+
+MPESA_SHORTCODE_TYPE = 'paybill'
+MPESA_EXPRESS_SHORTCODE = '174379'
+
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
+
+MPESA_INITIATOR_USERNAME = 'testapi'
+
+MPESA_INITIATOR_SECURITY_CREDENTIAL = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'

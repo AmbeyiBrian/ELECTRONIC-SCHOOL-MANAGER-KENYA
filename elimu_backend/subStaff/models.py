@@ -8,3 +8,4 @@ class SubStaff(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE, related_name='sub_staff', null=True)
     activation_code = models.CharField(max_length=11)
     role = models.CharField(max_length=30)
+    date_created=models.DateTimeField(auto_created=True, null=True)

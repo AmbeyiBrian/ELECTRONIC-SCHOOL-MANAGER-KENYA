@@ -9,7 +9,7 @@ class user_serializer(serializers.ModelSerializer):  # serializer class to creat
     class Meta:
         model = Users
         fields = (
-            'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'national_id', 'user_class',
+            'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'user_class',
             'password')
 
     def create(self, validated_data):
@@ -27,7 +27,7 @@ class principal_serializer2(serializers.ModelSerializer):  # serializer to retri
     class Meta:
         model = Users
         fields = (
-            'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'national_id', 'user_class',
+            'first_name', 'last_name', 'gender', 'email_address', 'phone_number', 'user_class',
             'password', 'auth_token', 'principal', 'teacher', 'sub_staff'
         )
         depth = 1

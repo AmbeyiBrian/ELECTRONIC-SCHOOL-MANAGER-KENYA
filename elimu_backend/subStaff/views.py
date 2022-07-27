@@ -22,6 +22,7 @@ class SubStaffAPI(APIView):
         return Response(serializer.data)
 
 
+
 class ActivationKeyValidation(APIView):
     permission_classes = ()
     serializer_class = SubStaffSerializer
@@ -43,4 +44,9 @@ class ActivationKeyValidation(APIView):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
+
+    def delete(self, request, activation_code, format=None):
+        sub_staff_account = SubStaff.objects.get(activation_code=activation_code)
+        sub_staff_account.delete()
+        return Response('Deleted')
 

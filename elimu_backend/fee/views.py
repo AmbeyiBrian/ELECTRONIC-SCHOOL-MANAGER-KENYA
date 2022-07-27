@@ -3,6 +3,8 @@ from rest_framework.views import APIView
 from fee.models import FeeStructure, FeeStatement
 from fee.serializers import GetFeeStructureSerializer, PostFeeStructureSerializer, GetFeeStatementSerializer, \
     PostFeeStatementSerializer
+from students.models import students
+import json
 
 
 class FeeAPI(APIView):
@@ -70,45 +72,87 @@ class FeeStatementAPI(APIView):
         fee_statements = FeeStatement.objects.filter(student__school=school).order_by('-id')
         serializer = GetFeeStatementSerializer(fee_statements, many=True)
         return Response(serializer.data)
-#
-#
-# from django.http import HttpResponse
-# import requests
-# from requests.auth import HTTPBasicAuth
-# import json
-# from .mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
-#
-#
-# def getAccessToken(request):
-#     consumer_key = 'cHnkwYIgBbrxlgBoneczmIJFXVm0oHky'
-#     consumer_secret = '2nHEyWSD4VjpNh2g'
-#     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
-#     r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-#     mpesa_access_token = json.loads(r.text)
-#     validated_mpesa_access_token = mpesa_access_token['access_token']
-#     return HttpResponse(validated_mpesa_access_token)
-#
-#
-# def lipa_na_mpesa_online(request):
-#     access_token = MpesaAccessToken.validated_mpesa_access_token
-#     api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-#     headers = {"Authorization": "Bearer %s" % access_token}
-#     try:
-#         request = {
-#             "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
-#             "Password": LipanaMpesaPpassword.decode_password,
-#             "Timestamp": LipanaMpesaPpassword.lipa_time,
-#             "TransactionType": "CustomerPayBillOnline",
-#             "Amount": 1,
-#             "PartyA": 254797259698,  # replace with your phone number to get stk push
-#             "PartyB": LipanaMpesaPpassword.Business_short_code,
-#             "PhoneNumber": 254797259698,  # replace with your phone number to get stk push
-#             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-#             "AccountReference": "Henry",
-#             "TransactionDesc": "Testing stk push"
-#         }
-#         response = requests.post(api_url, json=request, headers=headers)
-#     except:
-#         return HttpResponse('Failed')
-#     else:
-#         return HttpResponse(response)
+
+
+from django_daraja.mpesa.core import MpesaClient
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse, JsonResponse
+from fee.models import MpesaCalls, MpesaPayment
+
+
+class MpesaAPI(APIView):
+    permission_classes = ()
+
+    def post(self, request):
+        global fee_data
+        fee_data=request.data
+        cl = MpesaClient()
+        phone_number = request.data['phone_number']
+        amount = int(request.data['amount'])
+        account_reference = request.data['bank_account_number']
+        transaction_desc = request.data['description']
+        callback_url = "https://2974-41-89-104-15.eu.ngrok.io/fee/daraja/stk_push_callback"
+        response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+
+        if response.status_code == 200:
+            r = response.content
+            t = json.loads(r)
+            MpesaCalls.objects.create(CheckoutRequestID=t['CheckoutRequestID'],
+                                      ResponseDescription=t['ResponseDescription']).save()
+            return HttpResponse(r)
+        else:
+            e = response.content
+            er = json.loads(e)
+            err = er['errorMessage']
+            print("Transaction error", err)
+            return HttpResponse(err)
+
+
+@csrf_exempt
+def index(request):
+    cl = MpesaClient()
+    phone_number = '0797259698'
+    amount = 1
+    account_reference = 'Henry'
+    transaction_desc = 'Description'
+    callback_url = "https://2974-41-89-104-15.eu.ngrok.io/fee/daraja/stk_push_callback"
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+
+    if response.status_code == 200:
+        r = response.content
+        t = json.loads(r)
+        MpesaCalls.objects.create(CheckoutRequestID=t['CheckoutRequestID'], ResponseDescription=t['ResponseDescription']).save()
+        return HttpResponse(r)
+    else:
+        e = response.content
+        er = json.loads(e)
+        err = er['errorMessage']
+        print("Transaction ERROR", err)
+        return HttpResponse(err)
+
+
+@csrf_exempt
+def stk_push_callback(request):
+    dt = json.loads(request.body)
+    data = dt['Body']['stkCallback']
+
+    if data['ResultCode']==0:
+        payment = MpesaPayment.objects.create(
+                                    amount=data['CallbackMetadata']['Item'][0]['Value'],
+                                    description=data['ResultDesc'],
+                                    reference=data['CallbackMetadata']['Item'][1]['Value'],
+                                    phone_number=data['CallbackMetadata']['Item'][4]['Value'],
+                                    )
+        payment.save()
+        FeeStatement.objects.create(
+                student=students.objects.get(id=int(fee_data['student'])),
+                ref_code=data['CallbackMetadata']['Item'][1]['Value'],
+                description=fee_data['description'],
+                amount=fee_data['amount'],
+                balance=fee_data['balance']
+            ).save()
+    else:
+        pass
+
+    return JsonResponse(dict(data))
+

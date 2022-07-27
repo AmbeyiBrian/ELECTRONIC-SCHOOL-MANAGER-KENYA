@@ -28,7 +28,6 @@ class Users(AbstractBaseUser):
     last_name = models.CharField(max_length=50, verbose_name='LastName')
     email_address = models.EmailField(max_length=50, unique=True, primary_key=True)
     phone_number = models.CharField(max_length=15)
-    national_id = models.CharField(max_length=8)
     gender = models.CharField(max_length=20, choices=[('Male', 'Male'), ('Female', 'Female')])
     user_class = models.CharField(max_length=50, choices=[('Principal', 'Principal'), ('Teacher', 'Teacher'),
                                                           ('Parent', 'Parent'), ('Sub staff', 'Sub staff')])

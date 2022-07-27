@@ -18,7 +18,7 @@ class teacherAPI(APIView):
             return Response(serializer.errors)
 
     def get(self, request, school):
-        list_teachers = teachers.objects.filter(school=school).order_by('teacher_school_id')
+        list_teachers = teachers.objects.filter(school=school)
         serializer = listTeacherSerializer(list_teachers, many=True)
         return Response(serializer.data)
 

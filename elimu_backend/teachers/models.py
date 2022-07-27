@@ -5,7 +5,6 @@ from school.models import school
 
 class teachers(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE, related_name='teacher', null=True)
-    teacher_school_id = models.CharField(max_length=10)
     school = models.ForeignKey(school, on_delete=models.CASCADE, related_name='teachers')
     tsc_number = models.CharField(max_length=15)
     other_role = models.CharField(max_length=50)
